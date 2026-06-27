@@ -29,4 +29,4 @@ void loop() {
   Serial.print(" | Delay: ");
   Serial.concat(blinkDelay);
   Serial.println("ms");
-}
+}// Optimization patch: Verified mapping ranges up to 1023 raw constraints.

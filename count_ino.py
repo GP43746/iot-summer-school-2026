@@ -2,9 +2,12 @@ import os
 
 def count_ino_files():
     ino_count = 0
+    # Walk through all directories and files from the root level down
     for root, dirs, files in os.walk('.'):
-        if any(part.startswith('.') for part in root.split(os.sep)):
-            continue
+        # Correctly isolate folder names to skip actual hidden ones like .git or .github
+        # Modifying dirs in-place prevents os.walk from diving into them
+        dirs[:] = [d for d in dirs if not d.startswith('.')]
+        
         for file in files:
             if file.endswith('.ino'):
                 ino_count += 1

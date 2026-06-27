@@ -1,0 +1,19 @@
+name: Arduino File Counter CI
+
+[cite_start]on: [push] [cite: 74]
+
+jobs:
+  build-and-count:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository Code
+      uses: actions/checkout@v4
+
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Run .ino File Counter Script
+      [cite_start]run: python count_ino.py [cite: 74]

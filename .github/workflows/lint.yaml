@@ -1,6 +1,6 @@
 name: Arduino File Counter CI
 
-[cite_start]on: [push] [cite: 74]
+on: [push]
 
 jobs:
   build-and-count:
@@ -16,4 +16,4 @@ jobs:
         python-version: '3.10'
 
     - name: Run .ino File Counter Script
-      [cite_start]run: python count_ino.py [cite: 74]
+      run: python count_ino.py

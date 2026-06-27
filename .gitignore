@@ -1,0 +1,22 @@
+# Arduino / C++ Build Artifacts
+*.hex
+*.elf
+*.o
+*.d
+build/
+bin/
+
+# IDE and Editor Configs
+.vscode/
+.idea/
+*.swp
+*.bak
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Security & Private Configurations
+config.h
+secrets.h
+.env

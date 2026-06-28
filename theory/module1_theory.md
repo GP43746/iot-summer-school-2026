@@ -1,3 +1,5 @@
+# Module 1 Theory & Conceptual Questions
+
 ## Q9. Explain the difference between `git pull`, `git fetch`, and `git clone`. When would you use each?
 
 These three commands represent the core mechanisms Git uses to interact with remote repositories, but they operate at entirely different stages of the development workflow:

@@ -1,6 +1,6 @@
 /**
  * @file led_blink.ino
- * @author [Your Name]
+ * @author Gauransh Pundir
  * @date 2026-06-27
  * @description IoT Summer School Module 1 - Progressively versioned LED blink 
  * controller featuring analog data scaling and serial telemetry logs.

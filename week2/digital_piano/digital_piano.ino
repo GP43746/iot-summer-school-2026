@@ -9,6 +9,7 @@ const int NOTE_DO = 262;
 const int NOTE_RE = 294;
 const int NOTE_MI = 330;
 const int NOTE_FA = 349;
+const int NOTE_SOL_CHORD = 392;
 
 void setup() {
   pinMode(BUZZER_PIN, OUTPUT);
@@ -24,15 +25,18 @@ void loop() {
   bool btnMi = (digitalRead(KEY_MI) == LOW);
   bool btnFa = (digitalRead(KEY_FA) == LOW);
 
-  if (btnDo) {
-    tone(BUZZER_PIN, NOTE_DO);
-  } else if (btnRe) {
-    tone(BUZZER_PIN, NOTE_RE);
-  } else if (btnMi) {
-    tone(BUZZER_PIN, NOTE_MI);
-  } else if (btnFa) {
-    tone(BUZZER_PIN, NOTE_FA);
-  } else {
+  int activeKeysCount = btnDo + btnRe + btnMi + btnFa;
+
+  if (activeKeysCount >= 2) {
+    tone(BUZZER_PIN, NOTE_SOL_CHORD);
+  } 
+  else if (activeKeysCount == 1) {
+    if (btnDo) tone(BUZZER_PIN, NOTE_DO);
+    else if (btnRe) tone(BUZZER_PIN, NOTE_RE);
+    else if (btnMi) tone(BUZZER_PIN, NOTE_MI);
+    else if (btnFa) tone(BUZZER_PIN, NOTE_FA);
+  } 
+  else {
     noTone(BUZZER_PIN);
   }
 }
